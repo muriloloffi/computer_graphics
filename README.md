@@ -1,2 +1,2 @@
-# computer_graphics
-OpenGL code practice with C++
+# Computer graphics
+OpenGL code practice with C++.
