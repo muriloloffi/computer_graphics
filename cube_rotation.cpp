@@ -1,16 +1,19 @@
 #include <cstdlib>
 #include <GL/glut.h>
 #include <GL/glut.h>
+#include <unistd.h>
 
 
 void display()
 {
 	glClearColor(0.0, 0.0, 0.0, 0.0);
 	glClear(GL_COLOR_BUFFER_BIT);
-	glColor3f(1.0,1.0,1.0); //set global fill color to white
+	//Set fill color (R,G,B):
+	glColor3f(1.0,1.0,1.0);
 	glOrtho(-2.0,2.0,-2.0,2.0,-2.0,1.0);
-	glRotatef(90,1,1,1);
-	//To draw only the triangle lines
+	//(angle of rotation, (x, y, z) of a vector) 
+	glRotatef(45,1,0.5,1);
+	//Just draw the triangles edges:
 	glPolygonMode(GL_FRONT_AND_BACK, GL_LINE); 
 
 	GLfloat vertices[8][3] = //Vector of vectors with cube vertices positions
@@ -24,7 +27,7 @@ void display()
 		{1,1,1}, //6-rear-upper-right
 		{1,0,1}  //7-rear-bottom-right
 	};
-//GL_TRIANGLES
+
 	glBegin(GL_TRIANGLES); //front face - triangle 1
 		glVertex3fv(vertices[0]);
 		glVertex3fv(vertices[1]);
