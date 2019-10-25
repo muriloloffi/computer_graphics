@@ -7,9 +7,11 @@ void display()
 {
 	glClearColor(0.0, 0.0, 0.0, 0.0);
 	glClear(GL_COLOR_BUFFER_BIT);
-	glColor3f(1.0,1.0,1.0);
+	glColor3f(1.0,1.0,1.0); //set global fill color to white
 	glOrtho(-2.0,2.0,-2.0,2.0,-2.0,1.0);
-	glRotatef(45,0.5,0.5,0.5);
+	glRotatef(90,1,1,1);
+	//To draw only the triangle lines
+	glPolygonMode(GL_FRONT_AND_BACK, GL_LINE); 
 
 	GLfloat vertices[8][3] = //Vector of vectors with cube vertices positions
 	{
@@ -22,6 +24,7 @@ void display()
 		{1,1,1}, //6-rear-upper-right
 		{1,0,1}  //7-rear-bottom-right
 	};
+//GL_TRIANGLES
 	glBegin(GL_TRIANGLES); //front face - triangle 1
 		glVertex3fv(vertices[0]);
 		glVertex3fv(vertices[1]);
@@ -96,7 +99,7 @@ int main(int argc, char *argv[])
 	// Initialize GLUT
 	glutInit(&argc, argv);
 	// Create a window
-	glutCreateWindow("OpenGL example");
+	glutCreateWindow("OpenGL Cube");
 	// Register display callback
 	glutDisplayFunc(display);
 	// Register keyboard callback
