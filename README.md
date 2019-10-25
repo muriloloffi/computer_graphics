@@ -1,9 +1,17 @@
 # Computer graphics
+
 OpenGL code practice with C++.
+
+## GLUT Library required
+
+Install the library (Arch Linux example):
+
+```console
+$ pacman -S freeglut
+```
 ### Compile using:
-gcc cube_rotation.cpp -o outputFilename1.o -L/usr/X11R6/lib/ -lGL -lGLU -lglut
-### Dependency required:
-GLUT - The OpenGL Utility Toolkit
-#### Arch linux: 
-sudo pacman -S freeglut
+
+```console
+$ gcc cube_rotation.cpp -o outputFilename1.o -L/usr/X11R6/lib/ -lGL -lGLU -lglut
+```
 
