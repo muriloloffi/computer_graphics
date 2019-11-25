@@ -7,7 +7,7 @@ OpenGL code practice with C++.
 Install the library (Arch Linux example):
 
 ```console
-$ pacman -S freeglut
+$ pacman -S freeglut freeglut-devel
 ```
 ### Compile using:
 
