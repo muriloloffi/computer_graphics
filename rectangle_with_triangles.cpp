@@ -3,6 +3,7 @@
 #include <GL/glut.h>
 
 
+
 void display()
 {
 	glClearColor(0.0, 0.0, 0.0, 0.0);
@@ -31,6 +32,7 @@ void display()
 		{2,0,0}, //6-bottom-middle-right
 		{3,0,0}  //7-bottom-right
 	};
+
 
 	glBegin(GL_TRIANGLES); //triangle 1
 		glVertex3fv(vertices[0]);
