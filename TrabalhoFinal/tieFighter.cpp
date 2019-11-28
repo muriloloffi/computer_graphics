@@ -52,8 +52,41 @@ void display()
 		{5,1,0},				//16
 		{4,1,0},				//17
 		{3.292893219,1.5,0}		//18
-};
+	};
 
+		GLfloat wingVertices[19][3] = //Vector of vectors with wingVertices positions
+	{
+	/*	
+	   *9				  *---*                  *
+	   |			  ´    \ /    `              |
+	   *8		   *´ ------*-------`*           *
+	   |		 /    '   .   .   '    \         |
+	   *4-------*5 -------- *  -------  *--------*
+	   |	/	|      \    |     /     |        |
+	   *3-- ----*6  ----    *  -------  *        *
+	   |    \   |      /    |     \     |        |
+	   *2-------*7 -------- * --------- *--------*
+	   |         \     .  ´    `  .    /         |
+	   *1		   * ------ * ------ *           *
+	   |             `     /  \    ´             |
+	   *0               ` *----* ´               *
+	                     
+	*/
+
+		//wing vertexes
+		{0,-2,0},				//0
+		{0,1,0}, 				//1
+		{0,2,0}, 				//2
+		{0,2.5,0}, 				//3
+		{0,3,0},			    //4
+		{3,3,0},				//5
+		{3,2.5,0},  			//6
+		{3,2,0},				//7
+		{0,4,0},				//8
+		{0,7,0}					//9
+	};
+
+	//core
 	glBegin(GL_TRIANGLES); //triangle 1
 		glVertex3fv(coreVertices[0]);
 		glVertex3fv(coreVertices[1]);
@@ -164,6 +197,38 @@ void display()
 		glVertex3fv(coreVertices[2]);
 		glVertex3fv(coreVertices[13]);
 	glEnd();
+
+	//wing
+	glBegin(GL_LINE_STRIP); //wing disc
+		glVertex3fv(wingVertices[0]);
+		glVertex3fv(wingVertices[1]);
+		glVertex3fv(wingVertices[2]);
+		glVertex3fv(wingVertices[3]);
+		glVertex3fv(wingVertices[4]);
+		glVertex3fv(wingVertices[8]);
+		glVertex3fv(wingVertices[9]);
+	glEnd();
+	glBegin(GL_TRIANGLES); //triangle 1
+		glVertex3fv(wingVertices[2]);
+		glVertex3fv(wingVertices[3]);
+		glVertex3fv(wingVertices[7]);
+	glEnd();
+	glBegin(GL_TRIANGLES); //triangle 2
+		glVertex3fv(wingVertices[3]);
+		glVertex3fv(wingVertices[4]);
+		glVertex3fv(wingVertices[5]);
+	glEnd();
+	glBegin(GL_TRIANGLES); //triangle 3
+		glVertex3fv(wingVertices[3]);
+		glVertex3fv(wingVertices[5]);
+		glVertex3fv(wingVertices[6]);
+	glEnd();
+	glBegin(GL_TRIANGLES); //triangle 4
+		glVertex3fv(wingVertices[3]);
+		glVertex3fv(wingVertices[6]);
+		glVertex3fv(wingVertices[7]);
+	glEnd();
+
 	glFlush();
 }
 
