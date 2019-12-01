@@ -121,7 +121,7 @@ int main(int argc, char *argv[])
 	// Create a window
 	glutCreateWindow("OpenGL Tie Fighter");
 	// Just draw the triangles edges:
-	glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
+	glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
 	// Register display callback
 	glutDisplayFunc(display);
 
