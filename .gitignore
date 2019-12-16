@@ -31,5 +31,8 @@
 *.out
 *.app
 
-#UnfinishedTextures
+# UnfinishedTextures
 *.jpg
+
+# VSCode workspace config file
+*.code-workspace
